@@ -1,0 +1,75 @@
+\documentclass[11pt,a4paper]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+% ---- latex_handler theme support ------------------------------------------
+\providecommand{\lhtheme}{light}
+\def\lhdarkvalue{dark}
+\definecolor{lhlightaccent}{HTML}{1F4E79}
+\definecolor{lhdarkaccent}{HTML}{E8A33D}
+\colorlet{lhaccent}{lhlightaccent}
+\def\lhthemevalue{Light}
+\ifx\lhtheme\lhdarkvalue
+  \colorlet{lhaccent}{lhdarkaccent}
+  \def\lhthemevalue{Dark}
+\fi
+\providecommand{\lhbar}{}
+\providecommand{\lhfootertext}{}
+\InputIfFileExists{lh-branding}{}{}
+% ---------------------------------------------------------------------------
+
+\title{An Example Book}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+\lhbar
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+This book variation demonstrates the \texttt{book} class with front matter,
+main matter, chapters, and an appendix. It is discovered through the
+\texttt{*\_main.tex} pattern.
+
+\tableofcontents
+
+\mainmatter
+
+\chapter{Getting Started}
+Describe the purpose of the book and how the chapters are organised. The
+current theme is \lhthemevalue.
+
+\chapter{Building the Book}
+Explain a key concept. Numbered equations and cross-references work as usual:
+\begin{equation}
+  \label{eq:series}
+  \sum_{k=1}^{\infty} \frac{1}{k^2} = \frac{\pi^2}{6}.
+\end{equation}
+See Equation~\ref{eq:series} in the appendix discussion.
+
+\chapter{Working with Assets}
+Mention where images and bibliography files should be placed: either the
+project-local \texttt{assets/} directory or the template-shared \texttt{shared/}
+directory.
+
+\appendix
+
+\chapter{Useful Commands}
+\begin{itemize}
+  \item \texttt{latex\_handler compile --theme all}
+  \item \texttt{latex\_handler project pdfs}
+  \item \texttt{latex\_handler clean .}
+\end{itemize}
+
+\lhbar
+\noindent\small\lhfootertext
+
+\end{document}

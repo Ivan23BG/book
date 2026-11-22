@@ -1,0 +1,6 @@
+name = "book"
+version = "1.0.0"
+description = "Feuille de livre (book) — matter principal, chapters, annexes, thèmes light/dark."
+authors = ["Ivan23BG"]
+repository = "https://github.com/Ivan23BG/book.git"
+shared_assets = "shared"
